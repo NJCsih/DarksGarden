@@ -1,0 +1,7 @@
+---
+id: impermanence
+aliases: []
+tags: []
+---
+
+
