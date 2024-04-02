@@ -59,6 +59,10 @@ on actually balancing.
 Snapshots are a way to make a full backup of a subvolume. They use reflinks so they initially take zero space and then
 only new writes take up space. This allows for a really elegant full system backup.
 
+Note: snapshots will not backup subvolumes by default, so make sure you set up your tools correctly.
+
+I personally use [[linux/system/borg.md|borg]] for my longer term backups.
+
 #### The Bad
 
 > From a post from [dalto](https://forum.endeavouros.com/t/my-testing-of-bcachefs/49607/) (not a professional filesystemer either, but interesting points).
@@ -79,7 +83,7 @@ This means my btrfs layout looks like:
 /@nix -> mounts to /nix
 ```
 
-You can move these around all you want (literally like folders) and delete and recreate them. This gives superpowers to [[content/linux/nix/impermanence.md|NixOS impermanence]].
+You can move these around all you want (literally like folders) and delete and recreate them. This gives superpowers to [[linux/nix/impermanence.md|NixOS impermanence]].
 
 Each subvolume mount can have different options and can be snapshotted independently.
 
@@ -117,8 +121,10 @@ the default `zstd:3` compression and have not encountered any issues.
 ## Raid
 
 I have not tried any RAID configurations with btrfs. From the random things I have stumbled upon (**DO YOUR OWN RESEARCH**) it seems that btrfs is good 
-for RAID0 and RAID1. RAID5/6 have really bad bugs. If you're looking to RAID, from what I can tell [[content/linux/system/bcachefs.md|bcachefs]] has good
+for RAID0 and RAID1. RAID5/6 have really bad bugs. If you're looking to RAID, from what I can tell [[linux/system/bcachefs.md|bcachefs]] has good
 large storage support and can do RAID's well. It has a lot of the same features, and is getting better by the day.
+
+Note: **bcachefs is still relatively new**. For critical systems, maybe something like ZFS would be better.
 
 # Other Sources
 

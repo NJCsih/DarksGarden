@@ -1,0 +1,7 @@
+---
+id: nushell
+aliases: []
+tags: []
+---
+
+
