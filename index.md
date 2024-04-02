@@ -6,8 +6,8 @@ tags: []
 
 # My Digital Garden
 
-A place for me. Here is a collection of little rabbit holes I go down.
-
+Welcome to my humble little corner on the internet! Here I document random little rabbit holes
+and various things I learn, I hope it's of some use :)
 
 ## Fun Notes
 
